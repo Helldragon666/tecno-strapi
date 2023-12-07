@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pedidos",
+  "info": {
+    "singularName": "pedido",
+    "pluralName": "pedidos",
+    "displayName": "Pedido",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "usuario": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "total": {
+      "type": "decimal",
+      "required": true
+    },
+    "idPago": {
+      "type": "string",
+      "required": true
+    },
+    "direccion": {
+      "type": "json",
+      "required": true
+    },
+    "productos": {
+      "type": "json",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "idPago",
+      "required": true
+    }
+  }
+}
